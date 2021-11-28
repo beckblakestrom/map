@@ -6,3 +6,7 @@ var map = new mapboxgl.Map({
 	center: [-79.931053, 32.776474],
 	zoom: 10,
 });
+
+var marker = new mapboxgl.Marker()
+	.setLngLat([-79.931053, 32.776474])
+	.addTo(map);
