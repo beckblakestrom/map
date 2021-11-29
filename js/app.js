@@ -13,26 +13,3 @@ var marker = new mapboxgl.Marker()
 	.addTo(map);
 
 // clusters
-var map = L.mapbox
-	.map("map")
-	.setView([41.873941, -87.624225], 12)
-	.addLayer(L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11"));
-
-const markers = new L.MarkerClusterGroup();
-const data = chicago.data;
-const length = data.length;
-
-for (let i = 0; i < length; i++) {
-	const a = chicago.data[i];
-	const title = a[13];
-	const marker = L.marker(new L.LatLng(a[26], a[28]), {
-		icon: L.mapbox.marker.icon({
-			"marker-symbol": "post",
-			"marker-color": "0044FF",
-		}),
-		title: title,
-	});
-	marker.bindPopup(title);
-	markers.addLayer(marker);
-}
-map.addLayer(markers);
